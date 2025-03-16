@@ -32,7 +32,7 @@
             background: #f5f5f5;
             color: #263238;
             line-height: 1.6;
-            overflow-x: hidden; /* Prevent horizontal overflow */
+            overflow-x: hidden;
         }
 
         .background {
@@ -44,141 +44,57 @@
             opacity: 1;
         }
 
-        /* Main Container */
-        main {
-            overflow: hidden; /* Trim any overflow from sidebar */
-        }
-
-        /* Sidebar */
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: -300px; /* Hidden by default */
-            width: 300px;
-            height: 100vh;
-            background: #263238;
-            padding: 20px;
-            transition: left 0.3s ease;
-            z-index: 1000;
-            border: none; /* Ensure no border */
-            margin-left: -10px; /* Extra margin to prevent bleed */
-        }
-
-        .sidebar.active {
-            left: 0;
-            margin-left: 0; /* Reset margin when active */
-        }
-
-        .sidebar-info {
+        /* Header */
+        header {
+            background: #26A69A;
+            color: #fff;
             text-align: center;
+            padding: 60px 20px;
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); /* Slight curve effect */
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
         }
 
         .avatar {
-            width: 100px;
+            width: 150px;
             border-radius: 50%;
-            margin-bottom: 15px;
-        }
-
-        .info-content .name {
-            font-size: 1.5rem;
-            color: #26A69A;
-        }
-
-        .info-content .title {
-            font-size: 1rem;
-            color: #B0BEC5;
-        }
-
-        .info_more-btn {
-            background: #26A69A;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            margin-top: 15px;
-        }
-
-        .sidebar-info_more {
             margin-top: 20px;
-        }
-
-        .contacts-list li {
-            display: flex;
-            align-items: center;
-            margin: 10px 0;
-        }
-
-        .icon-box ion-icon {
-            font-size: 1.5rem;
-            color: #26A69A;
-        }
-
-        .contact-info {
-            margin-left: 10px;
-        }
-
-        .contact-title {
-            font-size: 0.9rem;
-            color: #B0BEC5;
-        }
-
-        .contact-link, address {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .social-list {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-link ion-icon {
-            font-size: 1.5rem;
-            color: #26A69A;
-            transition: color 0.3s ease;
-        }
-
-        .social-link:hover ion-icon {
-            color: #fff;
-        }
-
-        /* Main Content */
-        .main-content {
-            margin-left: 0; /* No margin when sidebar is hidden */
-            padding: 40px;
-            transition: margin-left 0.3s ease;
-            background: #fff;
-            min-height: 100vh;
-            border-left: none; /* Ensure no left border */
-        }
-
-        .main-content.active {
-            margin-left: 300px; /* Adjust when sidebar is active */
+            border: 4px solid #fff;
         }
 
         /* Navbar */
-        .navbar {
-            margin-bottom: 40px;
-            border-bottom: 1px solid #ECEFF1;
-            padding-bottom: 10px;
+        nav {
+            background: #fff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .navbar-list {
             display: flex;
-            gap: 20px;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
         }
 
         .navbar-link {
             background: none;
             border: none;
             color: #607D8B;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 500;
             cursor: pointer;
             transition: color 0.3s ease;
+            text-decoration: none;
         }
 
         .navbar-link.active {
@@ -186,105 +102,57 @@
             border-bottom: 2px solid #26A69A;
         }
 
-        /* Article Sections */
-        article {
-            display: none;
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        article.active {
-            display: block;
+        /* About Section */
+        .about {
+            text-align: center;
         }
 
-        .h2.article-title {
+        .about h2 {
             font-size: 2.5rem;
             color: #26A69A;
             margin-bottom: 20px;
-            font-weight: 700;
         }
 
-        .about-text p {
+        .about p {
             font-size: 1.1rem;
             color: #455A64;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Skills Section */
         .skills {
-            padding: 40px 0;
+            margin-top: 40px;
         }
 
-        .h3.skills-title {
+        .skills h3 {
             font-size: 1.8rem;
             color: #26A69A;
             margin-bottom: 20px;
-            font-weight: 500;
+            text-align: center;
         }
 
-        .skills-toggle {
-            background: #ECEFF1;
-            width: max-content;
-            margin: 0 auto;
-            display: flex;
-            padding: 5px;
-            border-radius: 25px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .skills-toggle::before {
-            content: "";
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            bottom: 5px;
-            width: 90px;
-            background: #26A69A;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .skills-toggle.active::before {
-            left: 100px;
-        }
-
-        .toggle-btn {
-            color: #607D8B;
-            padding: 5px 25px;
-            transition: color 0.3s ease;
-            cursor: pointer;
-        }
-
-        .toggle-btn.active {
-            color: #fff;
-        }
-
-        .skills-box .skills-list,
-        .skills-box.active .tools-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
             gap: 20px;
-            animation: fadeIn 0.5s ease-out forwards;
-        }
-
-        .skills-box.active .skills-list,
-        .skills-box .tools-list {
-            display: none;
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+            justify-content: center;
         }
 
         .skill-card {
             background: #ECEFF1;
-            width: 80px;
-            height: 80px;
-            display: grid;
-            place-items: center;
+            padding: 15px;
             border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: relative;
+            text-align: center;
             transition: transform 0.3s ease;
         }
 
@@ -292,76 +160,124 @@
             transform: scale(1.1);
         }
 
-        .skill-card .tooltip {
-            position: absolute;
-            top: -30px;
-            background: #26A69A;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .skill-card:hover .tooltip {
-            opacity: 1;
-            transform: translateY(-5px);
-        }
-
-        .card-icon img {
+        .skill-card img {
             width: 50px;
             height: 50px;
+            margin-bottom: 10px;
         }
 
-        /* Service Section */
-        .service {
+        .skill-card span {
+            color: #455A64;
+            font-size: 0.9rem;
+        }
+
+        /* Services Section */
+        .services {
             margin-top: 40px;
         }
 
-        .h3.service-title {
+        .services h3 {
             font-size: 1.8rem;
             color: #26A69A;
             margin-bottom: 20px;
-            font-weight: 500;
+            text-align: center;
         }
 
-        .service-list {
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
 
-        .service-item {
+        .service-card {
             background: #ECEFF1;
             padding: 20px;
             border-radius: 12px;
+            text-align: center;
             transition: transform 0.3s ease;
         }
 
-        .service-item:hover {
+        .service-card:hover {
             transform: translateY(-5px);
         }
 
-        .service-icon-box img {
+        .service-card img {
             width: 40px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
-        .h4.service-item-title {
+        .service-card h4 {
             font-size: 1.2rem;
             color: #26A69A;
             margin-bottom: 10px;
-            font-weight: 500;
         }
 
-        .service-item-text {
+        .service-card p {
             color: #455A64;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section (Collapsible) */
+        .contact-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-toggle {
+            background: #26A69A;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            display: none;
+            background: #ECEFF1;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .contact-details.active {
+            display: block;
+        }
+
+        .contact-details ul {
+            list-style: none;
+        }
+
+        .contact-details li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-details a {
+            color: #26A69A;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        .contact-details a:hover {
+            color: #00897B;
         }
 
         /* Portfolio Section */
-        .projects {
+        .portfolio {
             margin-top: 40px;
+        }
+
+        .portfolio h2 {
+            font-size: 2.5rem;
+            color: #26A69A;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         .filter-list {
@@ -473,30 +389,20 @@
         }
 
         /* Resume Section */
-        .timeline {
+        .resume {
             margin-top: 40px;
         }
 
-        .title-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .resume h2 {
+            font-size: 2.5rem;
+            color: #26A69A;
             margin-bottom: 20px;
+            text-align: center;
         }
 
-        .icon-box ion-icon {
-            font-size: 1.5rem;
-            color: #26A69A;
-        }
-
-        .h3 {
-            font-size: 1.8rem;
-            color: #26A69A;
-            font-weight: 500;
-        }
-
-        .timeline-list {
-            list-style: none;
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .timeline-item {
@@ -511,27 +417,33 @@
             transform: translateY(-5px);
         }
 
-        .h4.timeline-item-title {
+        .timeline-item h4 {
             font-size: 1.2rem;
             color: #26A69A;
             margin-bottom: 10px;
-            font-weight: 500;
         }
 
-        .timeline-text {
+        .timeline-item span {
+            color: #607D8B;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
             color: #455A64;
         }
 
-        /* Contact Section */
+        /* Contact Form */
         .contact-form {
             margin-top: 40px;
+            text-align: center;
         }
 
-        .h3.form-title {
+        .contact-form h3 {
             font-size: 1.8rem;
             color: #26A69A;
             margin-bottom: 20px;
-            font-weight: 500;
         }
 
         .form {
@@ -590,425 +502,218 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .sidebar {
-                left: -300px;
-                margin-left: -10px;
+            header {
+                padding: 40px 10px;
             }
 
-            .sidebar.active {
-                left: 0;
-                margin-left: 0;
-            }
-
-            .main-content {
-                margin-left: 0;
+            .header-content h1 {
+                font-size: 2rem;
             }
 
             .avatar {
-                width: 50px;
+                width: 100px;
             }
 
             .navbar-list {
-                justify-content: center;
-            }
-
-            .service-list {
-                grid-template-columns: 1fr;
-            }
-
-            .project-list {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                gap: 15px;
             }
 
             .input-wrapper {
                 flex-direction: column;
+            }
+
+            .skills-grid, .services-grid, .project-list {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <div class="background">
-        <main>
-            <!-- Sidebar -->
-            <aside class="sidebar" data-sidebar>
-                <div class="sidebar-info">
-                    <figure class="avatar-box">
-                        <img src="https://avatars.githubusercontent.com/u/108749445?v=4" alt="Varadaraj D Ganiga" class="avatar">
-                    </figure>
-                    <div class="info-content">
-                        <h1 class="name" title="Varadaraj D Ganiga">Varadaraj D Ganiga</h1>
-                        <p class="title">Tech Enthusiast & MCA Student</p>
-                    </div>
-                    <button class="info_more-btn" data-sidebar-btn>
-                        <span>Show Contacts</span>
-                        <ion-icon name="chevron-down"></ion-icon>
-                    </button>
-                </div>
-
-                <div class="sidebar-info_more">
-                    <div class="separator"></div>
-                    <ul class="contacts-list">
-                        <li class="contact-item">
-                            <div class="icon-box">
-                                <ion-icon name="mail-outline"></ion-icon>
-                            </div>
-                            <div class="contact-info">
-                                <p class="contact-title">Email</p>
-                                <a href="mailto:ganigadvarada007@gmail.com" class="contact-link">ganigadvarada007@gmail.com</a>
-                            </div>
-                        </li>
-                        <li class="contact-item">
-                            <div class="icon-box">
-                                <ion-icon name="phone-portrait-outline"></ion-icon>
-                            </div>
-                            <div class="contact-info">
-                                <p class="contact-title">Phone</p>
-                                <a href="tel:+917892094177" class="contact-link">+91 7892094177</a>
-                            </div>
-                        </li>
-                        <li class="contact-item">
-                            <div class="icon-box">
-                                <ion-icon name="location-outline"></ion-icon>
-                            </div>
-                            <div class="contact-info">
-                                <p class="contact-title">Location</p>
-                                <address>Udupi, Karnataka, India</address>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="separator"></div>
-                    <ul class="social-list">
-                        <li class="social-item">
-                            <a href="https://github.com/VaradScript/" class="social-link">
-                                <ion-icon name="logo-github"></ion-icon>
-                            </a>
-                        </li>
-                        <li class="social-item">
-                            <a href="https://twitter.com/varadaraj007?t=J24WwiewPLXXDRQ2WcElQw&s=09" class="social-link">
-                                <ion-icon name="logo-twitter"></ion-icon>
-                            </a>
-                        </li>
-                        <li class="social-item">
-                            <a href="https://www.linkedin.com/in/varadaraj-d-ganiga-5b50a1246/" class="social-link">
-                                <ion-icon name="logo-linkedin"></ion-icon>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </aside>
-
-            <!-- Main Content -->
-            <div class="main-content" id="mainContent">
-                <!-- Navbar -->
-                <nav class="navbar">
-                    <ul class="navbar-list">
-                        <li class="navbar-item">
-                            <button class="navbar-link active" data-nav-link>About</button>
-                        </li>
-                        <li class="navbar-item">
-                            <button class="navbar-link" data-nav-link>Resume</button>
-                        </li>
-                        <li class="navbar-item">
-                            <button class="navbar-link" data-nav-link>Portfolio</button>
-                        </li>
-                        <li class="navbar-item">
-                            <button class="navbar-link" data-nav-link>Contact</button>
-                        </li>
-                    </ul>
-                </nav>
-
-                <!-- About Section -->
-                <article class="about active" data-page="about">
-                    <header>
-                        <h2 class="h2 article-title">About Me</h2>
-                    </header>
-                    <section class="about-text">
-                        <p>
-                            Hi! I’m Varadaraj D Ganiga, currently pursuing an MCA at NMAM Institute of Technology, Nitte. With a BCA degree from Mangalore University, I have a strong foundation in IT and a passion for software development, AI, and cybersecurity. I’m eager to apply my technical skills to real-world challenges, constantly learning and exploring new technologies to break barriers through code.
-                        </p>
-                    </section>
-
-                    <!-- Languages and Tools -->
-                    <section class="skills">
-                        <h3 class="h3 skills-title">Languages and Tools</h3>
-                        <div class="skills-box" data-skills-box>
-                            <div class="skills-toggle">
-                                <button class="toggle-btn active" data-toggle-btn>Skills</button>
-                                <button class="toggle-btn" data-toggle-btn>Tools</button>
-                            </div>
-                            <ul class="skills-list">
-                                <li>
-                                    <div class="skill-card">
-                                        <div class="tooltip">HTML5</div>
-                                        <div class="card-icon">
-                                            <img src="https://codewithsadee.github.io/jack-portfolio/assets/images/html5.png" alt="HTML5 logo">
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="skill-card">
-                                        <div class="tooltip">CSS3</div>
-                                        <div class="card-icon">
-                                            <img src="https://codewithsadee.github.io/jack-portfolio/assets/images/css3.png" alt="CSS3 logo">
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="skill-card">
-                                        <div class="tooltip">JavaScript</div>
-                                        <div class="card-icon">
-                                            <img src="https://codewithsadee.github.io/jack-portfolio/assets/images/javascript.png" alt="JavaScript logo">
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="skill-card">
-                                        <div class="tooltip">Java</div>
-                                        <div class="card-icon">
-                                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java logo">
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="skill-card">
-                                        <div class="tooltip">Python</div>
-                                        <div class="card-icon">
-                                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python logo">
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="skill-card">
-                                        <div class="tooltip">Cybersecurity</div>
-                                        <div class="card-icon">
-                                            <img src="https://img.icons8.com/ios-filled/50/000000/security-shield-green.png" alt="Cybersecurity logo">
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <ul class="tools-list">
-                                <li>
-                                    <div class="skill-card">
-                                        <div class="tooltip">Git</div>
-                                        <div class="card-icon">
-                                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git logo">
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="skill-card">
-                                        <div class="tooltip">VS Code</div>
-                                        <div class="card-icon">
-                                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" alt="VS Code logo">
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="skill-card">
-                                        <div class="tooltip">Docker</div>
-                                        <div class="card-icon">
-                                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker logo">
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
-
-                    <!-- Services -->
-                    <section class="service">
-                        <h3 class="h3 service-title">What I'm Doing</h3>
-                        <ul class="service-list">
-                            <li class="service-item">
-                                <div class="service-icon-box">
-                                    <img src="https://img.icons8.com/fluency/48/web-design--v1.png" alt="design icon" width="40">
-                                </div>
-                                <div class="service-content-box">
-                                    <h4 class="h4 service-item-title">Web Development</h4>
-                                    <p class="service-item-text">Building responsive and user-friendly websites using modern technologies.</p>
-                                </div>
-                            </li>
-                            <li class="service-item">
-                                <div class="service-icon-box">
-                                    <img src="https://img.icons8.com/color-glass/48/google-code.png" alt="AI icon" width="40">
-                                </div>
-                                <div class="service-content-box">
-                                    <h4 class="h4 service-item-title">AI Projects</h4>
-                                    <p class="service-item-text">Developing AI-driven solutions like facial expression recognition systems.</p>
-                                </div>
-                            </li>
-                            <li class="service-item">
-                                <div class="service-icon-box">
-                                    <img src="https://img.icons8.com/ios-filled/50/000000/security-shield-green.png" alt="cybersecurity icon" width="40">
-                                </div>
-                                <div class="service-content-box">
-                                    <h4 class="h4 service-item-title">Cybersecurity</h4>
-                                    <p class="service-item-text">Exploring ethical hacking and digital security practices.</p>
-                                </div>
-                            </li>
-                            <li class="service-item">
-                                <div class="service-icon-box">
-                                    <img src="https://img.icons8.com/color/48/compact-camera.png" alt="camera icon" width="40">
-                                </div>
-                                <div class="service-content-box">
-                                    <h4 class="h4 service-item-title">Photography</h4>
-                                    <p class="service-item-text">Capturing high-quality photos as a hobby.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </section>
-                </article>
-
-                <!-- Resume Section -->
-                <article class="resume" data-page="resume">
-                    <header>
-                        <h2 class="h2 article-title">Resume</h2>
-                    </header>
-                    <section class="timeline">
-                        <div class="title-wrapper">
-                            <div class="icon-box">
-                                <ion-icon name="book-outline"></ion-icon>
-                            </div>
-                            <h3 class="h3">Education</h3>
-                        </div>
-                        <ol class="timeline-list">
-                            <li class="timeline-item">
-                                <h4 class="h4 timeline-item-title">Master of Computer Applications (MCA)</h4>
-                                <span>2024 - 2025 (Expected)</span>
-                                <p class="timeline-text">NMAM Institute of Technology, Nitte University, Karnataka, India. Focused on software development, AI, and networking.</p>
-                            </li>
-                            <li class="timeline-item">
-                                <h4 class="h4 timeline-item-title">Bachelor of Computer Applications (BCA)</h4>
-                                <span>2021 - 2024</span>
-                                <p class="timeline-text">Mangalore University, Karnataka, India. Developed a strong foundation in programming, web development, and cybersecurity.</p>
-                            </li>
-                        </ol>
-                    </section>
-                    <section class="timeline">
-                        <div class="title-wrapper">
-                            <div class="icon-box">
-                                <ion-icon name="briefcase-outline"></ion-icon>
-                            </div>
-                            <h3 class="h3">Experience</h3>
-                        </div>
-                        <ol class="timeline-list">
-                            <li class="timeline-item">
-                                <h4 class="h4 timeline-item-title">Internship at Teachnook</h4>
-                                <span>July 2022</span>
-                                <p class="timeline-text">Completed a web development internship, building mini and major projects under guidance. Gained hands-on experience in HTML, CSS, and JavaScript.</p>
-                            </li>
-                            <li class="timeline-item">
-                                <h4 class="h4 timeline-item-title">Freelance Web Developer</h4>
-                                <span>2022 - Present</span>
-                                <p class="timeline-text">Developed responsive websites and web applications for clients, utilizing HTML, CSS, JavaScript, and Java.</p>
-                            </li>
-                        </ol>
-                    </section>
-                    <section class="timeline">
-                        <div class="title-wrapper">
-                            <div class="icon-box">
-                                <ion-icon name="certificate-outline"></ion-icon>
-                            </div>
-                            <h3 class="h3">Certificates</h3>
-                        </div>
-                        <ol class="timeline-list">
-                            <li class="timeline-item">
-                                <h4 class="h4 timeline-item-title">Web Development Internship - Teachnook</h4>
-                                <span>July 2022</span>
-                                <p class="timeline-text">Certificate ID: 3830276098. Built mini and major projects under mentorship.</p>
-                            </li>
-                        </ol>
-                    </section>
-                </article>
-
-                <!-- Portfolio Section -->
-                <article class="portfolio" data-page="portfolio">
-                    <header>
-                        <h2 class="h2 article-title">Portfolio</h2>
-                    </header>
-                    <section class="projects">
-                        <ul class="filter-list">
-                            <li class="filter-item">
-                                <button class="active" data-filter-btn>All</button>
-                            </li>
-                            <li class="filter-item">
-                                <button data-filter-btn>Web Development</button>
-                            </li>
-                            <li class="filter-item">
-                                <button data-filter-btn>AI Projects</button>
-                            </li>
-                        </ul>
-                        <ul class="project-list">
-                            <li class="project-item active" data-filter-item data-category="ai projects">
-                                <a href="https://github.com/VaradScript/FaceXprso" target="_blank">
-                                    <figure class="project-img">
-                                        <div class="project-item-icon-box">
-                                            <ion-icon name="eye-outline"></ion-icon>
-                                        </div>
-                                        <img src="https://via.placeholder.com/300x200?text=FaceXprso" alt="FaceXprso" loading="lazy">
-                                    </figure>
-                                    <div class="project-content">
-                                        <h3 class="project-title">FaceXprso</h3>
-                                        <p class="project-description">A real-time facial expression recognition system using AI, designed for human-computer interaction, mental health monitoring, and behavioral analysis.</p>
-                                        <a href="https://github.com/VaradScript/FaceXprso" class="project-link" target="_blank">View on GitHub</a>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="project-item active" data-filter-item data-category="web development">
-                                <a href="https://github.com/VaradScript/WeatherWeb" target="_blank">
-                                    <figure class="project-img">
-                                        <div class="project-item-icon-box">
-                                            <ion-icon name="eye-outline"></ion-icon>
-                                        </div>
-                                        <img src="https://via.placeholder.com/300x200?text=Weather+Web" alt="Weather Web" loading="lazy">
-                                    </figure>
-                                    <div class="project-content">
-                                        <h3 class="project-title">Weather Web</h3>
-                                        <p class="project-description">A web application that fetches and displays weather data for the next 7 days using the OpenWeather API, with a responsive and user-friendly interface.</p>
-                                        <a href="https://github.com/VaradScript/WeatherWeb" class="project-link" target="_blank">View on GitHub</a>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="project-item" data-filter-item data-category="future projects">
-                                <a href="#">
-                                    <figure class="project-img">
-                                        <div class="project-item-icon-box">
-                                            <ion-icon name="eye-outline"></ion-icon>
-                                        </div>
-                                        <img src="https://via.placeholder.com/300x200?text=Coming+Soon" alt="Coming Soon" loading="lazy">
-                                    </figure>
-                                    <div class="project-content">
-                                        <h3 class="project-title">Coming Soon</h3>
-                                        <p class="project-description">Stay tuned for more exciting projects in AI, web development, and cybersecurity!</p>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </section>
-                </article>
-
-                <!-- Contact Section -->
-                <article class="contact" data-page="contact">
-                    <header>
-                        <h2 class="h2 article-title">Contact</h2>
-                    </header>
-                    <section class="contact-form">
-                        <h3 class="h3 form-title">Contact Form</h3>
-                        <form action="https://formspree.io/f/your-form-id" method="POST" class="form" data-form>
-                            <div class="input-wrapper">
-                                <input type="text" name="fullname" class="form-input" placeholder="Full Name" required data-form-input>
-                                <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input>
-                            </div>
-                            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-                            <button class="form-btn" type="submit" disabled data-form-btn>
-                                <ion-icon name="paper-plane"></ion-icon>
-                                <span>Send Message</span>
-                            </button>
-                        </form>
-                    </section>
-                </article>
+        <header>
+            <div class="header-content">
+                <h1>Varadaraj D Ganiga</h1>
+                <p>Tech Enthusiast & MCA Student</p>
+                <img src="https://avatars.githubusercontent.com/u/108749445?v=4" alt="Varadaraj D Ganiga" class="avatar">
             </div>
-        </main>
+        </header>
+
+        <nav>
+            <ul class="navbar-list">
+                <li><a href="#about" class="navbar-link active" data-nav-link>About</a></li>
+                <li><a href="#resume" class="navbar-link" data-nav-link>Resume</a></li>
+                <li><a href="#portfolio" class="navbar-link" data-nav-link>Portfolio</a></li>
+                <li><a href="#contact" class="navbar-link" data-nav-link>Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-content">
+            <!-- About Section -->
+            <section class="about" id="about" data-page="about">
+                <h2>About Me</h2>
+                <p>
+                    Hi! I’m Varadaraj D Ganiga, currently pursuing an MCA at NMAM Institute of Technology, Nitte. With a BCA degree from Mangalore University, I have a strong foundation in IT and a passion for software development, AI, and cybersecurity. I’m eager to apply my technical skills to real-world challenges, constantly learning and exploring new technologies to break barriers through code.
+                </p>
+
+                <!-- Skills Section -->
+                <section class="skills">
+                    <h3>Languages and Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card"><img src="https://codewithsadee.github.io/jack-portfolio/assets/images/html5.png" alt="HTML5"><span>HTML5</span></div>
+                        <div class="skill-card"><img src="https://codewithsadee.github.io/jack-portfolio/assets/images/css3.png" alt="CSS3"><span>CSS3</span></div>
+                        <div class="skill-card"><img src="https://codewithsadee.github.io/jack-portfolio/assets/images/javascript.png" alt="JavaScript"><span>JavaScript</span></div>
+                        <div class="skill-card"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java"><span>Java</span></div>
+                        <div class="skill-card"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+                        <div class="skill-card"><img src="https://img.icons8.com/ios-filled/50/000000/security-shield-green.png" alt="Cybersecurity"><span>Cybersecurity</span></div>
+                        <div class="skill-card"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
+                        <div class="skill-card"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" alt="VS Code"><span>VS Code</span></div>
+                        <div class="skill-card"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker"><span>Docker</span></div>
+                    </div>
+                </section>
+
+                <!-- Services Section -->
+                <section class="services">
+                    <h3>What I'm Doing</h3>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <img src="https://img.icons8.com/fluency/48/web-design--v1.png" alt="Web Development">
+                            <h4>Web Development</h4>
+                            <p>Building responsive and user-friendly websites using modern technologies.</p>
+                        </div>
+                        <div class="service-card">
+                            <img src="https://img.icons8.com/color-glass/48/google-code.png" alt="AI Projects">
+                            <h4>AI Projects</h4>
+                            <p>Developing AI-driven solutions like facial expression recognition systems.</p>
+                        </div>
+                        <div class="service-card">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/security-shield-green.png" alt="Cybersecurity">
+                            <h4>Cybersecurity</h4>
+                            <p>Exploring ethical hacking and digital security practices.</p>
+                        </div>
+                        <div class="service-card">
+                            <img src="https://img.icons8.com/color/48/compact-camera.png" alt="Photography">
+                            <h4>Photography</h4>
+                            <p>Capturing high-quality photos as a hobby.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section (Collapsible) -->
+                <section class="contact-section">
+                    <button class="contact-toggle" onclick="toggleContact()">Show Contacts</button>
+                    <div class="contact-details" id="contactDetails">
+                        <ul>
+                            <li><ion-icon name="mail-outline"></ion-icon> <a href="mailto:ganigadvarada007@gmail.com">ganigadvarada007@gmail.com</a></li>
+                            <li><ion-icon name="phone-portrait-outline"></ion-icon> <a href="tel:+917892094177">+91 7892094177</a></li>
+                            <li><ion-icon name="location-outline"></ion-icon> Udupi, Karnataka, India</li>
+                        </ul>
+                        <div class="social-list">
+                            <a href="https://github.com/VaradScript/" class="social-link"><ion-icon name="logo-github"></ion-icon></a>
+                            <a href="https://twitter.com/varadaraj007?t=J24WwiewPLXXDRQ2WcElQw&s=09" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a>
+                            <a href="https://www.linkedin.com/in/varadaraj-d-ganiga-5b50a1246/" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Resume Section -->
+            <section class="resume" id="resume" data-page="resume">
+                <h2>Resume</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Master of Computer Applications (MCA)</h4>
+                        <span>2024 - 2025 (Expected)</span>
+                        <p>NMAM Institute of Technology, Nitte University, Karnataka, India. Focused on software development, AI, and networking.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Bachelor of Computer Applications (BCA)</h4>
+                        <span>2021 - 2024</span>
+                        <p>Mangalore University, Karnataka, India. Developed a strong foundation in programming, web development, and cybersecurity.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Internship at Teachnook</h4>
+                        <span>July 2022</span>
+                        <p>Completed a web development internship, building mini and major projects under guidance. Gained hands-on experience in HTML, CSS, and JavaScript.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Freelance Web Developer</h4>
+                        <span>2022 - Present</span>
+                        <p>Developed responsive websites and web applications for clients, utilizing HTML, CSS, JavaScript, and Java.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Web Development Internship - Teachnook</h4>
+                        <span>July 2022</span>
+                        <p>Certificate ID: 3830276098. Built mini and major projects under mentorship.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio Section -->
+            <section class="portfolio" id="portfolio" data-page="portfolio">
+                <h2>Portfolio</h2>
+                <ul class="filter-list">
+                    <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
+                    <li class="filter-item"><button data-filter-btn>Web Development</button></li>
+                    <li class="filter-item"><button data-filter-btn>AI Projects</button></li>
+                </ul>
+                <ul class="project-list">
+                    <li class="project-item active" data-filter-item data-category="ai projects">
+                        <a href="https://github.com/VaradScript/FaceXprso" target="_blank">
+                            <figure class="project-img">
+                                <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                                <img src="https://via.placeholder.com/300x200?text=FaceXprso" alt="FaceXprso" loading="lazy">
+                            </figure>
+                            <div class="project-content">
+                                <h3 class="project-title">FaceXprso</h3>
+                                <p class="project-description">A real-time facial expression recognition system using AI, designed for human-computer interaction, mental health monitoring, and behavioral analysis.</p>
+                                <a href="https://github.com/VaradScript/FaceXprso" class="project-link" target="_blank">View on GitHub</a>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="project-item active" data-filter-item data-category="web development">
+                        <a href="https://github.com/VaradScript/WeatherWeb" target="_blank">
+                            <figure class="project-img">
+                                <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                                <img src="https://via.placeholder.com/300x200?text=Weather+Web" alt="Weather Web" loading="lazy">
+                            </figure>
+                            <div class="project-content">
+                                <h3 class="project-title">Weather Web</h3>
+                                <p class="project-description">A web application that fetches and displays weather data for the next 7 days using the OpenWeather API, with a responsive and user-friendly interface.</p>
+                                <a href="https://github.com/VaradScript/WeatherWeb" class="project-link" target="_blank">View on GitHub</a>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="project-item" data-filter-item data-category="future projects">
+                        <a href="#">
+                            <figure class="project-img">
+                                <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                                <img src="https://via.placeholder.com/300x200?text=Coming+Soon" alt="Coming Soon" loading="lazy">
+                            </figure>
+                            <div class="project-content">
+                                <h3 class="project-title">Coming Soon</h3>
+                                <p class="project-description">Stay tuned for more exciting projects in AI, web development, and cybersecurity!</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Contact Form Section -->
+            <section class="contact-form" id="contact" data-page="contact">
+                <h3>Contact Form</h3>
+                <form action="https://formspree.io/f/your-form-id" method="POST" class="form" data-form>
+                    <div class="input-wrapper">
+                        <input type="text" name="fullname" class="form-input" placeholder="Full Name" required data-form-input>
+                        <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input>
+                    </div>
+                    <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+                    <button class="form-btn" type="submit" disabled data-form-btn>
+                        <ion-icon name="paper-plane"></ion-icon><span>Send Message</span>
+                    </button>
+                </form>
+            </section>
+        </div>
     </div>
 
     <!-- Scripts -->
@@ -1023,30 +728,11 @@
             background.classList.add('loaded');
         });
 
-        // Element Toggle Function
-        const elementToggleFunc = function (elem) {
-            elem.classList.toggle("active");
+        // Contact Toggle
+        function toggleContact() {
+            const contactDetails = document.getElementById('contactDetails');
+            contactDetails.classList.toggle('active');
         }
-
-        // Sidebar Toggle
-        const sidebar = document.querySelector("[data-sidebar]");
-        const sidebarBtn = document.querySelector("[data-sidebar-btn]");
-        const mainContent = document.querySelector("#mainContent");
-        sidebarBtn.addEventListener("click", function () {
-            elementToggleFunc(sidebar);
-            elementToggleFunc(mainContent);
-        });
-
-        // Skills Toggle
-        const skillsBox = document.querySelector("[data-skills-box]");
-        const toggleBtns = document.querySelectorAll("[data-toggle-btn]");
-        toggleBtns.forEach(btn => {
-            btn.addEventListener("click", function () {
-                toggleBtns.forEach(b => b.classList.remove("active"));
-                this.classList.add("active");
-                elementToggleFunc(skillsBox);
-            });
-        });
 
         // Filter Functionality for Portfolio
         const filterItems = document.querySelectorAll("[data-filter-item]");
@@ -1092,12 +778,14 @@
         const navigationLinks = document.querySelectorAll("[data-nav-link]");
         const pages = document.querySelectorAll("[data-page]");
         for (let i = 0; i < navigationLinks.length; i++) {
-            navigationLinks[i].addEventListener("click", function () {
+            navigationLinks[i].addEventListener("click", function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
                 for (let j = 0; j < pages.length; j++) {
-                    if (this.innerHTML.toLowerCase() === pages[j].dataset.page) {
+                    if (targetId === pages[j].id) {
                         pages[j].classList.add("active");
                         navigationLinks[j].classList.add("active");
-                        window.scrollTo(0, 0);
+                        window.scrollTo({ top: pages[j].offsetTop - 80, behavior: 'smooth' });
                     } else {
                         pages[j].classList.remove("active");
                         navigationLinks[j].classList.remove("active");
