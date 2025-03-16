@@ -48,7 +48,7 @@
         .sidebar {
             position: fixed;
             top: 0;
-            left: -300px;
+            left: -300px; /* Hidden by default */
             width: 300px;
             height: 100vh;
             background: #263238;
@@ -58,7 +58,7 @@
         }
 
         .sidebar.active {
-            left: 0;
+            left: 0; /* Slides in when active */
         }
 
         .sidebar-info {
@@ -147,7 +147,7 @@
         }
 
         .main-content.active {
-            margin-left: 300px;
+            margin-left: 300px; /* Adjusts when sidebar is active */
         }
 
         /* Navbar */
