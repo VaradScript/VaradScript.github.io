@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>VaradScript | Portfolio</title>
+    <title>Varadaraj D Ganiga | Portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Code, Hack, Innovate. Breaking barriers with code & cybersecurity. Tech Enthusiast | Ethical Hacker | OSINT Specialist. Building tomorrow’s digital defenses.">
-    <meta name="keywords" content="Tech Enthusiast, Ethical Hacker, OSINT Specialist, Cybersecurity, Coding, Innovation, Digital Defenses, Web Development, Java, Python">
-    <meta name="author" content="VaradScript">
-    <meta property="og:title" content="VaradScript">
-    <meta property="og:description" content="Breaking barriers with code & cybersecurity. Tech Enthusiast | Ethical Hacker | OSINT Specialist. Building tomorrow’s digital defenses.">
+    <meta name="description" content="Tech enthusiast and MCA student specializing in software development, AI, and cybersecurity. Explore my projects and skills.">
+    <meta name="keywords" content="Varadaraj Ganiga, Software Development, AI, Cybersecurity, Web Development, MCA, Tech Enthusiast">
+    <meta name="author" content="Varadaraj D Ganiga">
+    <meta property="og:title" content="Varadaraj D Ganiga Portfolio">
+    <meta property="og:description" content="Tech enthusiast and MCA student specializing in software development, AI, and cybersecurity.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://varadscript.github.io/">
     <meta property="og:image" content="https://varadscript.github.io/assets/images/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="VaradScript">
-    <meta name="twitter:description" content="Breaking barriers with code & cybersecurity. Tech Enthusiast | Ethical Hacker | OSINT Specialist. Building tomorrow’s digital defenses.">
+    <meta name="twitter:title" content="Varadaraj D Ganiga Portfolio">
+    <meta name="twitter:description" content="Tech enthusiast and MCA student specializing in software development, AI, and cybersecurity.">
     <meta name="twitter:image" content="https://varadscript.github.io/assets/images/twitter-image.png">
     <link rel="icon" href="https://varadscript.github.io/assets/images/favicon.ico" type="image/x-icon">
     <link rel="canonical" href="https://varadscript.github.io/">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
-            color: #fff;
+            background: #f5f5f5;
+            color: #263238;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -47,17 +48,17 @@
         .sidebar {
             position: fixed;
             top: 0;
-            left: 0;
+            left: -300px;
             width: 300px;
             height: 100vh;
-            background: #222;
+            background: #263238;
             padding: 20px;
-            transition: transform 0.3s ease;
+            transition: left 0.3s ease;
             z-index: 1000;
         }
 
         .sidebar.active {
-            transform: translateX(-100%);
+            left: 0;
         }
 
         .sidebar-info {
@@ -72,16 +73,16 @@
 
         .info-content .name {
             font-size: 1.5rem;
-            color: #ff6f61;
+            color: #26A69A;
         }
 
         .info-content .title {
             font-size: 1rem;
-            color: #ccc;
+            color: #B0BEC5;
         }
 
         .info_more-btn {
-            background: #ff6f61;
+            background: #26A69A;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -102,7 +103,7 @@
 
         .icon-box ion-icon {
             font-size: 1.5rem;
-            color: #ff6f61;
+            color: #26A69A;
         }
 
         .contact-info {
@@ -111,7 +112,7 @@
 
         .contact-title {
             font-size: 0.9rem;
-            color: #ccc;
+            color: #B0BEC5;
         }
 
         .contact-link, address {
@@ -128,7 +129,7 @@
 
         .social-link ion-icon {
             font-size: 1.5rem;
-            color: #ff6f61;
+            color: #26A69A;
             transition: color 0.3s ease;
         }
 
@@ -141,6 +142,8 @@
             margin-left: 0;
             padding: 40px;
             transition: margin-left 0.3s ease;
+            background: #fff;
+            min-height: 100vh;
         }
 
         .main-content.active {
@@ -150,6 +153,8 @@
         /* Navbar */
         .navbar {
             margin-bottom: 40px;
+            border-bottom: 1px solid #ECEFF1;
+            padding-bottom: 10px;
         }
 
         .navbar-list {
@@ -160,15 +165,16 @@
         .navbar-link {
             background: none;
             border: none;
-            color: #ccc;
+            color: #607D8B;
             font-size: 1.2rem;
+            font-weight: 500;
             cursor: pointer;
             transition: color 0.3s ease;
         }
 
         .navbar-link.active {
-            color: #ff6f61;
-            border-bottom: 2px solid #ff6f61;
+            color: #26A69A;
+            border-bottom: 2px solid #26A69A;
         }
 
         /* Article Sections */
@@ -182,13 +188,14 @@
 
         .h2.article-title {
             font-size: 2.5rem;
-            color: #ff6f61;
+            color: #26A69A;
             margin-bottom: 20px;
+            font-weight: 700;
         }
 
         .about-text p {
             font-size: 1.1rem;
-            color: #ccc;
+            color: #455A64;
             margin-bottom: 20px;
         }
 
@@ -199,18 +206,19 @@
 
         .h3.skills-title {
             font-size: 1.8rem;
-            color: #ff6f61;
+            color: #26A69A;
             margin-bottom: 20px;
+            font-weight: 500;
         }
 
         .skills-toggle {
-            background: #333;
+            background: #ECEFF1;
             width: max-content;
             margin: 0 auto;
             display: flex;
             padding: 5px;
             border-radius: 25px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .skills-toggle::before {
@@ -220,7 +228,7 @@
             left: 5px;
             bottom: 5px;
             width: 90px;
-            background: #ff6f61;
+            background: #26A69A;
             border-radius: 25px;
             transition: all 0.3s ease;
         }
@@ -230,7 +238,7 @@
         }
 
         .toggle-btn {
-            color: #ccc;
+            color: #607D8B;
             padding: 5px 25px;
             transition: color 0.3s ease;
             cursor: pointer;
@@ -260,13 +268,13 @@
         }
 
         .skill-card {
-            background: #333;
+            background: #ECEFF1;
             width: 80px;
             height: 80px;
             display: grid;
             place-items: center;
             border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: relative;
             transition: transform 0.3s ease;
         }
@@ -278,7 +286,7 @@
         .skill-card .tooltip {
             position: absolute;
             top: -30px;
-            background: #ff6f61;
+            background: #26A69A;
             color: #fff;
             padding: 5px 10px;
             border-radius: 5px;
@@ -304,8 +312,9 @@
 
         .h3.service-title {
             font-size: 1.8rem;
-            color: #ff6f61;
+            color: #26A69A;
             margin-bottom: 20px;
+            font-weight: 500;
         }
 
         .service-list {
@@ -315,7 +324,7 @@
         }
 
         .service-item {
-            background: #333;
+            background: #ECEFF1;
             padding: 20px;
             border-radius: 12px;
             transition: transform 0.3s ease;
@@ -332,12 +341,13 @@
 
         .h4.service-item-title {
             font-size: 1.2rem;
-            color: #ff6f61;
+            color: #26A69A;
             margin-bottom: 10px;
+            font-weight: 500;
         }
 
         .service-item-text {
-            color: #ccc;
+            color: #455A64;
         }
 
         /* Skills Progress */
@@ -348,7 +358,7 @@
         }
 
         .skills-item {
-            background: #333;
+            background: #ECEFF1;
             padding: 15px;
             border-radius: 12px;
         }
@@ -362,22 +372,23 @@
 
         .h5 {
             font-size: 1rem;
-            color: #ff6f61;
+            color: #26A69A;
+            font-weight: 500;
         }
 
         data {
-            color: #ccc;
+            color: #607D8B;
         }
 
         .skill-progress-bg {
-            background: #222;
+            background: #CFD8DC;
             height: 10px;
             border-radius: 5px;
             overflow: hidden;
         }
 
         .skill-progress-fill {
-            background: #ff6f61;
+            background: #26A69A;
             height: 100%;
             transition: width 1s ease;
         }
@@ -395,8 +406,8 @@
         }
 
         .filter-item button {
-            background: #333;
-            color: #ccc;
+            background: #ECEFF1;
+            color: #607D8B;
             border: none;
             padding: 10px 20px;
             border-radius: 25px;
@@ -405,7 +416,7 @@
         }
 
         .filter-item button.active {
-            background: #ff6f61;
+            background: #26A69A;
             color: #fff;
         }
 
@@ -442,7 +453,7 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background: #ff6f61;
+            background: #26A69A;
             padding: 10px;
             border-radius: 50%;
             opacity: 0;
@@ -459,12 +470,13 @@
 
         .project-title {
             font-size: 1.2rem;
-            color: #ff6f61;
+            color: #26A69A;
             margin: 10px 0;
+            font-weight: 500;
         }
 
         .project-category {
-            color: #ccc;
+            color: #607D8B;
         }
 
         /* Resume Section */
@@ -481,12 +493,13 @@
 
         .icon-box ion-icon {
             font-size: 1.5rem;
-            color: #ff6f61;
+            color: #26A69A;
         }
 
         .h3 {
             font-size: 1.8rem;
-            color: #ff6f61;
+            color: #26A69A;
+            font-weight: 500;
         }
 
         .timeline-list {
@@ -494,7 +507,7 @@
         }
 
         .timeline-item {
-            background: #333;
+            background: #ECEFF1;
             padding: 20px;
             border-radius: 12px;
             margin-bottom: 20px;
@@ -507,12 +520,13 @@
 
         .h4.timeline-item-title {
             font-size: 1.2rem;
-            color: #ff6f61;
+            color: #26A69A;
             margin-bottom: 10px;
+            font-weight: 500;
         }
 
         .timeline-text {
-            color: #ccc;
+            color: #455A64;
         }
 
         /* Contact Section */
@@ -522,8 +536,9 @@
 
         .h3.form-title {
             font-size: 1.8rem;
-            color: #ff6f61;
+            color: #26A69A;
             margin-bottom: 20px;
+            font-weight: 500;
         }
 
         .form {
@@ -542,15 +557,15 @@
         .form-input {
             width: 100%;
             padding: 10px;
-            background: #333;
+            background: #ECEFF1;
             border: none;
             border-radius: 5px;
-            color: #fff;
+            color: #263238;
             font-size: 1rem;
         }
 
         .form-input::placeholder {
-            color: #ccc;
+            color: #90A4AE;
         }
 
         textarea.form-input {
@@ -559,7 +574,7 @@
         }
 
         .form-btn {
-            background: #ff6f61;
+            background: #26A69A;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -572,22 +587,22 @@
         }
 
         .form-btn:disabled {
-            background: #555;
+            background: #90A4AE;
             cursor: not-allowed;
         }
 
         .form-btn:hover:not(:disabled) {
-            background: #e65b50;
+            background: #00897B;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .sidebar {
-                transform: translateX(-100%);
+                left: -300px;
             }
 
             .sidebar.active {
-                transform: translateX(0);
+                left: 0;
             }
 
             .main-content {
@@ -623,11 +638,11 @@
             <aside class="sidebar" data-sidebar>
                 <div class="sidebar-info">
                     <figure class="avatar-box">
-                        <img src="https://avatars.githubusercontent.com/u/108749445?v=4" alt="VaradScript" class="avatar">
+                        <img src="https://avatars.githubusercontent.com/u/108749445?v=4" alt="Varadaraj D Ganiga" class="avatar">
                     </figure>
                     <div class="info-content">
-                        <h1 class="name" title="VaradScript">VaradScript</h1>
-                        <p class="title">Tech Enthusiast</p>
+                        <h1 class="name" title="Varadaraj D Ganiga">Varadaraj D Ganiga</h1>
+                        <p class="title">Tech Enthusiast & MCA Student</p>
                     </div>
                     <button class="info_more-btn" data-sidebar-btn>
                         <span>Show Contacts</span>
@@ -644,7 +659,7 @@
                             </div>
                             <div class="contact-info">
                                 <p class="contact-title">Email</p>
-                                <a href="mailto:ganigabhavya446@gmail.com" class="contact-link">TechnoVarad@gmail.com</a>
+                                <a href="mailto:ganigadvarada007@gmail.com" class="contact-link">ganigadvarada007@gmail.com</a>
                             </div>
                         </li>
                         <li class="contact-item">
@@ -653,7 +668,7 @@
                             </div>
                             <div class="contact-info">
                                 <p class="contact-title">Phone</p>
-                                <a href="tel:+919482040101" class="contact-link">+91 7892094177</a>
+                                <a href="tel:+917892094177" class="contact-link">+91 7892094177</a>
                             </div>
                         </li>
                         <li class="contact-item">
@@ -662,7 +677,7 @@
                             </div>
                             <div class="contact-info">
                                 <p class="contact-title">Location</p>
-                                <address>UDUPI, KARNATAKA, INDIA</address>
+                                <address>Udupi, Karnataka, India</address>
                             </div>
                         </li>
                     </ul>
@@ -714,7 +729,7 @@
                     </header>
                     <section class="about-text">
                         <p>
-                            Hi! I’m Varadaraj, currently pursuing a BCA degree with a strong passion for the IT field. I’m eager to expand my knowledge and skills, constantly learning and exploring new technologies. Being a tech enthusiast, I’m dedicated to breaking barriers through code and cybersecurity!
+                            Hi! I’m Varadaraj D Ganiga, currently pursuing an MCA at NMAM Institute of Technology, Nitte. With a BCA degree from Mangalore University, I have a strong foundation in IT and a passion for software development, AI, and cybersecurity. I’m eager to apply my technical skills to real-world challenges, constantly learning and exploring new technologies to break barriers through code.
                         </p>
                     </section>
 
@@ -761,17 +776,17 @@
                                 </li>
                                 <li>
                                     <div class="skill-card">
-                                        <div class="tooltip">Node.js</div>
+                                        <div class="tooltip">Python</div>
                                         <div class="card-icon">
-                                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="Node.js logo">
+                                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python logo">
                                         </div>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="skill-card">
-                                        <div class="tooltip">Python</div>
+                                        <div class="tooltip">Cybersecurity</div>
                                         <div class="card-icon">
-                                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python logo">
+                                            <img src="https://img.icons8.com/ios-filled/50/000000/security-shield-green.png" alt="Cybersecurity logo">
                                         </div>
                                     </div>
                                 </li>
@@ -814,26 +829,26 @@
                                     <img src="https://img.icons8.com/fluency/48/web-design--v1.png" alt="design icon" width="40">
                                 </div>
                                 <div class="service-content-box">
-                                    <h4 class="h4 service-item-title">Web Design</h4>
-                                    <p class="service-item-text">Crafting modern and high-quality designs for websites.</p>
-                                </div>
-                            </li>
-                            <li class="service-item">
-                                <div class="service-icon-box">
-                                    <img src="https://img.icons8.com/color-glass/48/google-code.png" alt="Web development icon" width="40">
-                                </div>
-                                <div class="service-content-box">
                                     <h4 class="h4 service-item-title">Web Development</h4>
-                                    <p class="service-item-text">Building high-quality, responsive websites.</p>
+                                    <p class="service-item-text">Building responsive and user-friendly websites using modern technologies.</p>
                                 </div>
                             </li>
                             <li class="service-item">
                                 <div class="service-icon-box">
-                                    <img src="https://img.icons8.com/external-vectorslab-outline-color-vectorslab/50/external-Mobile-Development-mobile-app-development-vectorslab-outline-color-vectorslab.png" alt="mobile app icon" width="40">
+                                    <img src="https://img.icons8.com/color-glass/48/google-code.png" alt="AI icon" width="40">
                                 </div>
                                 <div class="service-content-box">
-                                    <h4 class="h4 service-item-title">Mobile Apps</h4>
-                                    <p class="service-item-text">Beginner-level app development for iOS and Android.</p>
+                                    <h4 class="h4 service-item-title">AI Projects</h4>
+                                    <p class="service-item-text">Developing AI-driven solutions like facial expression recognition systems.</p>
+                                </div>
+                            </li>
+                            <li class="service-item">
+                                <div class="service-icon-box">
+                                    <img src="https://img.icons8.com/ios-filled/50/000000/security-shield-green.png" alt="cybersecurity icon" width="40">
+                                </div>
+                                <div class="service-content-box">
+                                    <h4 class="h4 service-item-title">Cybersecurity</h4>
+                                    <p class="service-item-text">Exploring ethical hacking and digital security practices.</p>
                                 </div>
                             </li>
                             <li class="service-item">
@@ -863,29 +878,49 @@
                         </div>
                         <ol class="timeline-list">
                             <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">Master of Computer Applications (MCA)</h4>
+                                <span>2024 - 2025 (Expected)</span>
+                                <p class="timeline-text">NMAM Institute of Technology, Nitte University, Karnataka, India. Focused on software development, AI, and networking.</p>
+                            </li>
+                            <li class="timeline-item">
                                 <h4 class="h4 timeline-item-title">Bachelor of Computer Applications (BCA)</h4>
                                 <span>2021 - 2024</span>
-                                <p class="timeline-text">Mangalore University, Karnataka, India. Focused on programming, web development, and cybersecurity.</p>
+                                <p class="timeline-text">Mangalore University, Karnataka, India. Developed a strong foundation in programming, web development, and cybersecurity.</p>
                             </li>
                         </ol>
                     </section>
                     <section class="timeline">
                         <div class="title-wrapper">
                             <div class="icon-box">
-                                <ion-icon name="book-outline"></ion-icon>
+                                <ion-icon name="briefcase-outline"></ion-icon>
                             </div>
                             <h3 class="h3">Experience</h3>
                         </div>
                         <ol class="timeline-list">
                             <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">Internship at Teachnook</h4>
+                                <span>July 2022</span>
+                                <p class="timeline-text">Completed a web development internship, building mini and major projects under guidance. Gained hands-on experience in HTML, CSS, and JavaScript.</p>
+                            </li>
+                            <li class="timeline-item">
                                 <h4 class="h4 timeline-item-title">Freelance Web Developer</h4>
                                 <span>2022 - Present</span>
                                 <p class="timeline-text">Developed responsive websites and web applications for clients, utilizing HTML, CSS, JavaScript, and Java.</p>
                             </li>
+                        </ol>
+                    </section>
+                    <section class="timeline">
+                        <div class="title-wrapper">
+                            <div class="icon-box">
+                                <ion-icon name="certificate-outline"></ion-icon>
+                            </div>
+                            <h3 class="h3">Certificates</h3>
+                        </div>
+                        <ol class="timeline-list">
                             <li class="timeline-item">
-                                <h4 class="h4 timeline-item-title">Cybersecurity Enthusiast</h4>
-                                <span>2021 - Present</span>
-                                <p class="timeline-text">Self-taught in ethical hacking and OSINT, exploring vulnerabilities and digital defenses.</p>
+                                <h4 class="h4 timeline-item-title">Web Development Internship - Teachnook</h4>
+                                <span>July 2022</span>
+                                <p class="timeline-text">Certificate ID: 3830276098. Built mini and major projects under mentorship.</p>
                             </li>
                         </ol>
                     </section>
@@ -902,26 +937,23 @@
                                 <button class="active" data-filter-btn>All</button>
                             </li>
                             <li class="filter-item">
-                                <button data-filter-btn>Web Design</button>
-                            </li>
-                            <li class="filter-item">
-                                <button data-filter-btn>Applications</button>
-                            </li>
-                            <li class="filter-item">
                                 <button data-filter-btn>Web Development</button>
+                            </li>
+                            <li class="filter-item">
+                                <button data-filter-btn>AI Projects</button>
                             </li>
                         </ul>
                         <ul class="project-list">
-                            <li class="project-item active" data-filter-item data-category="web development">
-                                <a href="https://varadscript.github.io/" target="_blank">
+                            <li class="project-item active" data-filter-item data-category="ai projects">
+                                <a href="#" target="_blank">
                                     <figure class="project-img">
                                         <div class="project-item-icon-box">
                                             <ion-icon name="eye-outline"></ion-icon>
                                         </div>
-                                        <img src="https://via.placeholder.com/300x200?text=Personal+Portfolio" alt="Personal Portfolio" loading="lazy">
+                                        <img src="https://via.placeholder.com/300x200?text=FaceXprso" alt="FaceXprso" loading="lazy">
                                     </figure>
-                                    <h3 class="project-title">Personal Portfolio</h3>
-                                    <p class="project-category">Web Development</p>
+                                    <h3 class="project-title">FaceXprso</h3>
+                                    <p class="project-category">AI Projects</p>
                                 </a>
                             </li>
                             <li class="project-item active" data-filter-item data-category="web development">
@@ -930,22 +962,10 @@
                                         <div class="project-item-icon-box">
                                             <ion-icon name="eye-outline"></ion-icon>
                                         </div>
-                                        <img src="https://via.placeholder.com/300x200?text=Blood+Donation+System" alt="Blood Donation System" loading="lazy">
+                                        <img src="https://via.placeholder.com/300x200?text=Weather+Web" alt="Weather Web" loading="lazy">
                                     </figure>
-                                    <h3 class="project-title">Blood Donation System</h3>
+                                    <h3 class="project-title">Weather Web</h3>
                                     <p class="project-category">Web Development</p>
-                                </a>
-                            </li>
-                            <li class="project-item active" data-filter-item data-category="web design">
-                                <a href="#" target="_blank">
-                                    <figure class="project-img">
-                                        <div class="project-item-icon-box">
-                                            <ion-icon name="eye-outline"></ion-icon>
-                                        </div>
-                                        <img src="https://via.placeholder.com/300x200?text=Design+Project" alt="Design Project" loading="lazy">
-                                    </figure>
-                                    <h3 class="project-title">Design Project</h3>
-                                    <p class="project-category">Web Design</p>
                                 </a>
                             </li>
                         </ul>
@@ -993,7 +1013,7 @@
             elem.classList.toggle("active");
         }
 
-        // Sidebar Toggle for Mobile
+        // Sidebar Toggle
         const sidebar = document.querySelector("[data-sidebar]");
         const sidebarBtn = document.querySelector("[data-sidebar-btn]");
         const mainContent = document.querySelector("#mainContent");
