@@ -32,7 +32,7 @@
             background: #f5f5f5;
             color: #263238;
             line-height: 1.6;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Prevent horizontal overflow */
         }
 
         .background {
@@ -55,10 +55,11 @@
             padding: 20px;
             transition: left 0.3s ease;
             z-index: 1000;
+            border: none; /* Ensure no border */
         }
 
         .sidebar.active {
-            left: 0; /* Slides in when active */
+            left: 0;
         }
 
         .sidebar-info {
@@ -144,10 +145,11 @@
             transition: margin-left 0.3s ease;
             background: #fff;
             min-height: 100vh;
+            border-left: none; /* Remove any potential left border */
         }
 
         .main-content.active {
-            margin-left: 300px; /* Adjusts when sidebar is active */
+            margin-left: 300px;
         }
 
         /* Navbar */
@@ -350,49 +352,6 @@
             color: #455A64;
         }
 
-        /* Skills Progress */
-        .skills-list.content-card {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .skills-item {
-            background: #ECEFF1;
-            padding: 15px;
-            border-radius: 12px;
-        }
-
-        .title-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .h5 {
-            font-size: 1rem;
-            color: #26A69A;
-            font-weight: 500;
-        }
-
-        data {
-            color: #607D8B;
-        }
-
-        .skill-progress-bg {
-            background: #CFD8DC;
-            height: 10px;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .skill-progress-fill {
-            background: #26A69A;
-            height: 100%;
-            transition: width 1s ease;
-        }
-
         /* Portfolio Section */
         .projects {
             margin-top: 40px;
@@ -428,6 +387,10 @@
 
         .project-item {
             display: none;
+            background: #ECEFF1;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .project-item.active {
@@ -437,16 +400,16 @@
         .project-img {
             position: relative;
             overflow: hidden;
-            border-radius: 12px;
         }
 
         .project-img img {
             width: 100%;
+            height: auto;
             transition: transform 0.3s ease;
         }
 
         .project-img:hover img {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .project-item-icon-box {
@@ -468,15 +431,38 @@
             color: #fff;
         }
 
+        .project-content {
+            padding: 15px;
+        }
+
         .project-title {
             font-size: 1.2rem;
             color: #26A69A;
-            margin: 10px 0;
+            margin-bottom: 10px;
             font-weight: 500;
         }
 
-        .project-category {
-            color: #607D8B;
+        .project-description {
+            color: #455A64;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: #26A69A;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #00897B;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         /* Resume Section */
@@ -945,27 +931,47 @@
                         </ul>
                         <ul class="project-list">
                             <li class="project-item active" data-filter-item data-category="ai projects">
-                                <a href="#" target="_blank">
+                                <a href="https://github.com/VaradScript/FaceXprso" target="_blank">
                                     <figure class="project-img">
                                         <div class="project-item-icon-box">
                                             <ion-icon name="eye-outline"></ion-icon>
                                         </div>
                                         <img src="https://via.placeholder.com/300x200?text=FaceXprso" alt="FaceXprso" loading="lazy">
                                     </figure>
-                                    <h3 class="project-title">FaceXprso</h3>
-                                    <p class="project-category">AI Projects</p>
+                                    <div class="project-content">
+                                        <h3 class="project-title">FaceXprso</h3>
+                                        <p class="project-description">A real-time facial expression recognition system using AI, designed for human-computer interaction, mental health monitoring, and behavioral analysis.</p>
+                                        <a href="https://github.com/VaradScript/FaceXprso" class="project-link" target="_blank">View on GitHub</a>
+                                    </div>
                                 </a>
                             </li>
                             <li class="project-item active" data-filter-item data-category="web development">
-                                <a href="#" target="_blank">
+                                <a href="https://github.com/VaradScript/WeatherWeb" target="_blank">
                                     <figure class="project-img">
                                         <div class="project-item-icon-box">
                                             <ion-icon name="eye-outline"></ion-icon>
                                         </div>
                                         <img src="https://via.placeholder.com/300x200?text=Weather+Web" alt="Weather Web" loading="lazy">
                                     </figure>
-                                    <h3 class="project-title">Weather Web</h3>
-                                    <p class="project-category">Web Development</p>
+                                    <div class="project-content">
+                                        <h3 class="project-title">Weather Web</h3>
+                                        <p class="project-description">A web application that fetches and displays weather data for the next 7 days using the OpenWeather API, with a responsive and user-friendly interface.</p>
+                                        <a href="https://github.com/VaradScript/WeatherWeb" class="project-link" target="_blank">View on GitHub</a>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="project-item" data-filter-item data-category="future projects">
+                                <a href="#">
+                                    <figure class="project-img">
+                                        <div class="project-item-icon-box">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                        </div>
+                                        <img src="https://via.placeholder.com/300x200?text=Coming+Soon" alt="Coming Soon" loading="lazy">
+                                    </figure>
+                                    <div class="project-content">
+                                        <h3 class="project-title">Coming Soon</h3>
+                                        <p class="project-description">Stay tuned for more exciting projects in AI, web development, and cybersecurity!</p>
+                                    </div>
                                 </a>
                             </li>
                         </ul>
