@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Code, Hack, Innovate. Breaking barriers with code & cybersecurity. Tech Enthusiast | Ethical Hacker | OSINT Specialist. Building tomorrow’s digital defenses.">
-    <meta name="keywords" content="Tech Enthusiast, Ethical Hacker, OSINT Specialist, Cybersecurity, Coding, Innovation, Digital Defenses">
+    <meta name="keywords" content="Tech Enthusiast, Ethical Hacker, OSINT Specialist, Cybersecurity, Coding, Innovation, Digital Defenses, Web Development, Java, Python">
     <meta name="author" content="VaradScript">
     <meta property="og:title" content="VaradScript">
     <meta property="og:description" content="Breaking barriers with code & cybersecurity. Tech Enthusiast | Ethical Hacker | OSINT Specialist. Building tomorrow’s digital defenses.">
@@ -20,7 +20,6 @@
     <link rel="canonical" href="https://varadscript.github.io/">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        /* CSS Reset */
         * {
             margin: 0;
             padding: 0;
@@ -54,6 +53,7 @@
             background: #222;
             padding: 20px;
             transition: transform 0.3s ease;
+            z-index: 1000;
         }
 
         .sidebar.active {
@@ -138,8 +138,13 @@
 
         /* Main Content */
         .main-content {
-            margin-left: 300px;
+            margin-left: 0;
             padding: 40px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .main-content.active {
+            margin-left: 300px;
         }
 
         /* Navbar */
@@ -462,6 +467,54 @@
             color: #ccc;
         }
 
+        /* Resume Section */
+        .timeline {
+            margin-top: 40px;
+        }
+
+        .title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .icon-box ion-icon {
+            font-size: 1.5rem;
+            color: #ff6f61;
+        }
+
+        .h3 {
+            font-size: 1.8rem;
+            color: #ff6f61;
+        }
+
+        .timeline-list {
+            list-style: none;
+        }
+
+        .timeline-item {
+            background: #333;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .h4.timeline-item-title {
+            font-size: 1.2rem;
+            color: #ff6f61;
+            margin-bottom: 10px;
+        }
+
+        .timeline-text {
+            color: #ccc;
+        }
+
         /* Contact Section */
         .contact-form {
             margin-top: 40px;
@@ -574,7 +627,7 @@
                     </figure>
                     <div class="info-content">
                         <h1 class="name" title="VaradScript">VaradScript</h1>
-                        <p class="title">Tech Guy</p>
+                        <p class="title">Tech Enthusiast</p>
                     </div>
                     <button class="info_more-btn" data-sidebar-btn>
                         <span>Show Contacts</span>
@@ -626,7 +679,7 @@
                             </a>
                         </li>
                         <li class="social-item">
-                            <a href="https://linkshortner.net/kXneF" class="social-link">
+                            <a href="https://www.linkedin.com/in/varadaraj-d-ganiga-5b50a1246/" class="social-link">
                                 <ion-icon name="logo-linkedin"></ion-icon>
                             </a>
                         </li>
@@ -635,7 +688,7 @@
             </aside>
 
             <!-- Main Content -->
-            <div class="main-content">
+            <div class="main-content" id="mainContent">
                 <!-- Navbar -->
                 <nav class="navbar">
                     <ul class="navbar-list">
@@ -794,49 +847,6 @@
                             </li>
                         </ul>
                     </section>
-
-                    <!-- Skills -->
-                    <section class="skill">
-                        <h3 class="h3 skills-title">My Skills</h3>
-                        <ul class="skills-list content-card">
-                            <li class="skills-item">
-                                <div class="title-wrapper">
-                                    <h5 class="h5">Web Design & Development</h5>
-                                    <data value="65">65%</data>
-                                </div>
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 65%;"></div>
-                                </div>
-                            </li>
-                            <li class="skills-item">
-                                <div class="title-wrapper">
-                                    <h5 class="h5">App Development</h5>
-                                    <data value="50">50%</data>
-                                </div>
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 50%;"></div>
-                                </div>
-                            </li>
-                            <li class="skills-item">
-                                <div class="title-wrapper">
-                                    <h5 class="h5">Cybersecurity</h5>
-                                    <data value="75">75%</data>
-                                </div>
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 75%;"></div>
-                                </div>
-                            </li>
-                            <li class="skills-item">
-                                <div class="title-wrapper">
-                                    <h5 class="h5">Technical Assistance</h5>
-                                    <data value="60">60%</data>
-                                </div>
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: 60%;"></div>
-                                </div>
-                            </li>
-                        </ul>
-                    </section>
                 </article>
 
                 <!-- Resume Section -->
@@ -853,9 +863,9 @@
                         </div>
                         <ol class="timeline-list">
                             <li class="timeline-item">
-                                <h4 class="h4 timeline-item-title">Mangalore University</h4>
+                                <h4 class="h4 timeline-item-title">Bachelor of Computer Applications (BCA)</h4>
                                 <span>2021 - 2024</span>
-                                <p class="timeline-text">Pursuing a BCA degree, focusing on IT and software development.</p>
+                                <p class="timeline-text">Mangalore University, Karnataka, India. Focused on programming, web development, and cybersecurity.</p>
                             </li>
                         </ol>
                     </section>
@@ -869,8 +879,13 @@
                         <ol class="timeline-list">
                             <li class="timeline-item">
                                 <h4 class="h4 timeline-item-title">Freelance Web Developer</h4>
-                                <span>2022 — Present</span>
-                                <p class="timeline-text">Developing websites and web applications for various clients.</p>
+                                <span>2022 - Present</span>
+                                <p class="timeline-text">Developed responsive websites and web applications for clients, utilizing HTML, CSS, JavaScript, and Java.</p>
+                            </li>
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">Cybersecurity Enthusiast</h4>
+                                <span>2021 - Present</span>
+                                <p class="timeline-text">Self-taught in ethical hacking and OSINT, exploring vulnerabilities and digital defenses.</p>
                             </li>
                         </ol>
                     </section>
@@ -898,51 +913,39 @@
                         </ul>
                         <ul class="project-list">
                             <li class="project-item active" data-filter-item data-category="web development">
-                                <a href="#">
+                                <a href="https://varadscript.github.io/" target="_blank">
                                     <figure class="project-img">
                                         <div class="project-item-icon-box">
                                             <ion-icon name="eye-outline"></ion-icon>
                                         </div>
-                                        <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                                        <img src="https://via.placeholder.com/300x200?text=Personal+Portfolio" alt="Personal Portfolio" loading="lazy">
                                     </figure>
-                                    <h3 class="project-title">Finance</h3>
+                                    <h3 class="project-title">Personal Portfolio</h3>
                                     <p class="project-category">Web Development</p>
                                 </a>
                             </li>
                             <li class="project-item active" data-filter-item data-category="web development">
-                                <a href="#">
+                                <a href="#" target="_blank">
                                     <figure class="project-img">
                                         <div class="project-item-icon-box">
                                             <ion-icon name="eye-outline"></ion-icon>
                                         </div>
-                                        <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
+                                        <img src="https://via.placeholder.com/300x200?text=Blood+Donation+System" alt="Blood Donation System" loading="lazy">
                                     </figure>
-                                    <h3 class="project-title">Orizon</h3>
+                                    <h3 class="project-title">Blood Donation System</h3>
                                     <p class="project-category">Web Development</p>
                                 </a>
                             </li>
                             <li class="project-item active" data-filter-item data-category="web design">
-                                <a href="#">
+                                <a href="#" target="_blank">
                                     <figure class="project-img">
                                         <div class="project-item-icon-box">
                                             <ion-icon name="eye-outline"></ion-icon>
                                         </div>
-                                        <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                                        <img src="https://via.placeholder.com/300x200?text=Design+Project" alt="Design Project" loading="lazy">
                                     </figure>
-                                    <h3 class="project-title">Fundo</h3>
+                                    <h3 class="project-title">Design Project</h3>
                                     <p class="project-category">Web Design</p>
-                                </a>
-                            </li>
-                            <li class="project-item active" data-filter-item data-category="applications">
-                                <a href="#">
-                                    <figure class="project-img">
-                                        <div class="project-item-icon-box">
-                                            <ion-icon name="eye-outline"></ion-icon>
-                                        </div>
-                                        <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
-                                    </figure>
-                                    <h3 class="project-title">Brawlhalla</h3>
-                                    <p class="project-category">Applications</p>
                                 </a>
                             </li>
                         </ul>
@@ -993,8 +996,10 @@
         // Sidebar Toggle for Mobile
         const sidebar = document.querySelector("[data-sidebar]");
         const sidebarBtn = document.querySelector("[data-sidebar-btn]");
+        const mainContent = document.querySelector("#mainContent");
         sidebarBtn.addEventListener("click", function () {
             elementToggleFunc(sidebar);
+            elementToggleFunc(mainContent);
         });
 
         // Skills Toggle
